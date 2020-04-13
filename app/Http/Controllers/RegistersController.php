@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\post;
 
-class PostsController extends Controller
+class RegistersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-       /* $posts= Post::orderBy('title','desc')->paginate(1);
-        return view('posts.index')->with('posts',$posts);*/
+      return view('pages.registers');
     }
 
     /**
@@ -25,7 +23,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        //
     }
 
     /**
@@ -36,6 +34,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request,[
             'Username'=>'required',
             'Password'=>'required',
@@ -59,8 +58,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post= Post::find($id);
-        return view('posts.show')->with('post',$post);
+        //
     }
 
     /**

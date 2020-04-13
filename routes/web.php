@@ -28,6 +28,7 @@ Route::get('/register','pagesController@register') ;
 
 
 Route::resource('posts','PostsController');
+Route::resource('registers','RegistersController');
 
          
 

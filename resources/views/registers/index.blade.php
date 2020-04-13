@@ -7,7 +7,7 @@
 @if(count($posts) > 0)
       @foreach($posts as $post)
       <div class="p-3 mb-2 bg-dark text-white">
-      <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
+      <h3><a href="/registers/{{$registers->id}}">{{$post->title}}</a></h3>
       </div>
 
         
