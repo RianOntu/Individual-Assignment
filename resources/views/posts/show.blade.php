@@ -1,10 +1,9 @@
-
 @extends('layout.app')
 
 @section('content')
 
-  
-<h1>{{$register->Username}}</h1>
+    
+<h1>{{$post->Username}}</h1>
 
 
         

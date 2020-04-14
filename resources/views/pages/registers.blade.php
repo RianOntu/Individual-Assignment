@@ -4,7 +4,7 @@
 <a  href="/registers"><button id="refresh" class="btn btn-primary">Refresh</button></a>
 <h1>Register Here</h1>
 
-{!! Form::open(['action' => 'PostsController@store', 'method' => 'POST']) !!}
+{!! Form::open(['action' => 'RegistersController@store', 'method' => 'POST']) !!}
 
 <div class="form-group">
     {{Form::label('Username', 'Username')}}

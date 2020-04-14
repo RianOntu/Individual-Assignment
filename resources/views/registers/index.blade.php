@@ -2,20 +2,20 @@
 
 @section('content')
 
-<h1>Posts</h1>
+<h1>Persons</h1>
 
-@if(count($posts) > 0)
-      @foreach($posts as $post)
+@if(count($registers) > 0)
+      @foreach($registers as $register)
       <div class="p-3 mb-2 bg-dark text-white">
-      <h3><a href="/registers/{{$registers->id}}">{{$post->title}}</a></h3>
+      <h3><a href="/registers/{{$register->id}}">{{$register->Username}}</a></h3>
       </div>
 
         
 
       @endforeach
-     {{$posts->links()}}
+     {{$registers->links()}}
 @else
-        <p>No post found!!!</p>
+        <p>No Person found!!!</p>
 
 @endif
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Register;
+use DB;
 
 class RegistersController extends Controller
 {
@@ -13,7 +15,8 @@ class RegistersController extends Controller
      */
     public function index()
     {
-      return view('pages.registers');
+          $registers= Register::orderBy('id','desc')->paginate(1);
+        return view('registers.index')->with('registers',$registers);
     }
 
     /**
@@ -23,7 +26,7 @@ class RegistersController extends Controller
      */
     public function create()
     {
-        //
+         return view('registers.create');
     }
 
     /**
@@ -41,12 +44,12 @@ class RegistersController extends Controller
             'Confirm_Password'=>'required',
             'Email'=>'required'
         ]);
-           $registers=new post;
-        $registers->Username=$request->input('Username');
-        $registers->Password=$request->input('Password');
-        $registers->Confirm_Password=$request->input('Confirm_Password');
-        $registers->Email=$request->input('Email');
-        $registers->save();
+           $register=new register;
+        $register->Username=$request->input('Username');
+        $register->Password=$request->input('Password');
+        $register->Confirm_Password=$request->input('Confirm_Password');
+        $register->Email=$request->input('Email');
+        $register->save();
         return redirect('/registers')->with('success','User Created!!');
     }
 
@@ -58,7 +61,8 @@ class RegistersController extends Controller
      */
     public function show($id)
     {
-        //
+          $register= Register::find($id);
+        return view('registers.show')->with('register',$register);
     }
 
     /**

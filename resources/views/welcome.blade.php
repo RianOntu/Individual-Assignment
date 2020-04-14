@@ -119,7 +119,7 @@
     <h1>Home Page</h1>
     
        <a href="/index"><button id="login" class="btn btn-primary">Login</button></a>
-       <a href="/registers"> <button id="register"class="btn btn-primary">Register</button></a>
+       <a href="/registers/create"> <button id="register"class="btn btn-primary">Register</button></a>
         </div>
       
        

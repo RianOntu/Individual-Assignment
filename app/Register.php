@@ -4,11 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class registers extends Model
+class Register extends Model
 {
+  
     
       protected $table='registers';
       public $primaryKey='id';
-      public $timestamps='false';
+      public $timestamps='true';
    
+
+
 }
