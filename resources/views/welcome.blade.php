@@ -30,7 +30,7 @@
                     margin-left: 39%; 
                    }
             html, body {
-                background-color:white;
+                background-color:wheat;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -116,7 +116,8 @@
         </style>
     </head>
     <body>
-    <h1>Home Page</h1>
+        <div>
+    <h1 style="margin-top:0px!important">Home Page</h1>
     
        <a href="/index"><button id="login" class="btn btn-primary">Login</button></a>
        <a href="/register/create"> <button id="register"class="btn btn-primary">Register</button></a>

@@ -1,9 +1,12 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\register;
+use Illuminate\Support\Facades\Storage;
+use App\Register;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -44,14 +47,14 @@ class RegisterController extends Controller
             'Phone_Number'=>'required',
             'Type'=>'required'
         ]);
-        $Register=new Register;
-        $Register->Username=$request->input('Username');
-        $Register->Password=$request->input('Password');
-        $Register->Confirm_Password=$request->input('Confirm_Password');
-        $Register->Email=$request->input('Email');
-         $Register->Phone_Number=$request->input('Phone_Number');
-          $Register->Type=$request->input('Type');
-        $Register->save();
+        $register=new Register;
+        $register->Username=$request->input('Username');
+        $register->Password=$request->input('Password');
+        $register->Confirm_Password=$request->input('Confirm_Password');
+        $register->Email=$request->input('Email');
+         $register->Phone_Number=$request->input('Phone_Number');
+          $register->Type=$request->input('Type');
+        $register->save();
         return redirect('/register')->with('success','User Created!!!');
     }
 
@@ -64,7 +67,7 @@ class RegisterController extends Controller
     public function show($id)
     {
            $register= Register::find($id);
-        return view('register.show')->with('register',$register);
+        return view('register.index')->with('register',$register);
     }
 
     /**
@@ -75,7 +78,8 @@ class RegisterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $register= Register::find($id);
+        return view('pages.edit')->with('register',$register);
     }
 
     /**
@@ -87,7 +91,23 @@ class RegisterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request,[
+            'Username'=>'required',
+            'Password'=>'required',
+            'Confirm_Password'=>'required',
+            'Email'=>'required',
+            'Phone_Number'=>'required',
+            'Type'=>'required'
+        ]);
+        $register = Register::find($id);
+        $register->Username=$request->input('Username');
+        $register->Password=$request->input('Password');
+        $register->Confirm_Password=$request->input('Confirm_Password');
+        $register->Email=$request->input('Email');
+         $register->Phone_Number=$request->input('Phone_Number');
+          $register->Type=$request->input('Type');
+        $register->save();
+        return redirect('/register')->with('success','User Updated!!!');
     }
 
     /**
@@ -98,6 +118,13 @@ class RegisterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $register=Register::find($id);
+           if ($register != null) {
+        $register->delete();
+      return redirect('/register')->with('success', 'User Removed!!!');
+    }
+
+    return redirect('/register')->with(['message'=> 'Wrong ID!!']);
+         
     }
 }

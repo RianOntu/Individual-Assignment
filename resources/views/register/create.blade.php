@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-<a  href="/registers"><button id="refresh" class="btn btn-primary">Refresh</button></a>
+<a  href="/register/create"><button id="refresh" class="btn btn-primary">Refresh</button></a>
 <h1>Register Here</h1>
 
 {!! Form::open(['action' => 'RegisterController@store', 'method' => 'POST']) !!}

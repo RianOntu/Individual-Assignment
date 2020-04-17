@@ -106,6 +106,9 @@
         </style>
     </head>
     <body>
+        @extends('layout.app')
+
+        @section('content')
     <h1>Login Page</h1>
     
         <div class="polaroid" style="text-align:center;margin-top:100px!important;">
@@ -113,11 +116,11 @@
             <input type="text"><br>
             <label for="password">Password:</label>
             <input type="password"><br><br>
-            <input class="submit" style="margin-top:1px;margin-left:35px;" type="submit" value="Submit">
+            <button class="btn btn-primary" style="margin-top:1px;margin-left:35px;" type="submit">Submit</button>
        <button class="fpass">Forgot Password?</button>
        <button class="regi">Register</button>
         </div>
-
+@endsection
       
     </body>
 </html>
