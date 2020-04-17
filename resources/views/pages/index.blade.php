@@ -4,9 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
     <title>{{$post->title ?? ''}}</title>
 
         <!-- Fonts -->
+=======
+    <title>{{$title ?? ''}}</title>
+
+        <!-- Fonts -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
@@ -106,9 +113,12 @@
         </style>
     </head>
     <body>
+<<<<<<< HEAD
         @extends('layout.app')
 
         @section('content')
+=======
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
     <h1>Login Page</h1>
     
         <div class="polaroid" style="text-align:center;margin-top:100px!important;">
@@ -116,11 +126,20 @@
             <input type="text"><br>
             <label for="password">Password:</label>
             <input type="password"><br><br>
+<<<<<<< HEAD
             <button class="btn btn-primary" style="margin-top:1px;margin-left:35px;" type="submit">Submit</button>
        <button class="fpass">Forgot Password?</button>
        <button class="regi">Register</button>
         </div>
 @endsection
       
+=======
+            <button class="btn btn-primary"  type="submit">Submit</button>
+       <button class="fpass">Forgot Password?</button>
+       <button class="regi">Register</button>
+        </div>
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
     </body>
 </html>

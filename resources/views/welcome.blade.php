@@ -30,7 +30,11 @@
                     margin-left: 39%; 
                    }
             html, body {
+<<<<<<< HEAD
                 background-color:wheat;
+=======
+                background-color:white;
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -116,11 +120,18 @@
         </style>
     </head>
     <body>
+<<<<<<< HEAD
         <div>
     <h1 style="margin-top:0px!important">Home Page</h1>
     
        <a href="/index"><button id="login" class="btn btn-primary">Login</button></a>
        <a href="/register/create"> <button id="register"class="btn btn-primary">Register</button></a>
+=======
+    <h1>Home Page</h1>
+    
+       <a href="/index"><button id="login" class="btn btn-primary">Login</button></a>
+       <a href="/registers/create"> <button id="register"class="btn btn-primary">Register</button></a>
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
         </div>
       
        

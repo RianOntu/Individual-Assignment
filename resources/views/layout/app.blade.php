@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{config('app.locale')}}">
+<<<<<<< HEAD
 @yield('content')
+=======
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,7 +112,11 @@
     <body>
         <div class="container">
              @include('inc.messages')
+<<<<<<< HEAD
             
+=======
+            @yield('content')
+>>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
         </div>
 
 
