@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-<<<<<<< HEAD
+
 });
 Route::get('/index', function () {
     return view('pages.index');
@@ -23,23 +23,45 @@ Route::get('/index', function () {
 
 
 
-Route::resource('register','RegisterController');
-=======
+
+
+
    
-});
+
 /*Route::get('/users/{id}',function($id){
     return 'this is'.$id; 
 });*/
 
-Route::get('/index','pagesController@index') ;
-Route::get('/services','pagesController@services') ;
-Route::get('/about','pagesController@about') ;
-Route::get('/register','pagesController@register') ;
-
+Route::get('/index','PagesController@index') ;
+Route::get('/services','PagesController@services') ;
+Route::get('/about','PagesController@about') ;
+//Route::get('/teacher','PagesController@teacher') ;
+Route::get('/show','AdminController@index') ;
+Route::get('/createnotice','CreateNoticeController@create') ;
+Route::get('/notices','CreateNoticeController@index') ;
+//Route::get('/home','HomeController@index') ;
+Route::resource('notice','CreateNoticeController') ;
+Route::resource('home','HomeController') ;
+Route::resource('admin','AdminController') ;
+Route::resource('user','UserController') ;
+Route::resource('teacher','TeacherController') ;
+//Route::resource('register','RegisterController@create') ;
 
 //Route::resource('posts','PostsController');
-Route::resource('registers','RegistersController');
 
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@verify');
+//Route::get('/logout', 'LogoutController@index');
          
+//Route::get('/home','HomeController@index') ;
 
->>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
+Auth::routes();
+//Route::group(['middleware'=>['sess']], function(){
+
+//	Route::get('/home', 'HomeController@index')->name('home.index');
+Route::get('/student', 'StudentController@index');
+Route::get('/teacher', 'TeacherController@index');
+
+//});
+
+

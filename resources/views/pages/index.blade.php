@@ -1,145 +1,95 @@
-<!DOCTYPE html>
-<html lang="{{config('app.locale')}}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-<<<<<<< HEAD
-    <title>{{$post->title ?? ''}}</title>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-        <!-- Fonts -->
-=======
-    <title>{{$title ?? ''}}</title>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+ 
 
-        <!-- Fonts -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
->>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<style>
+    .far.fa-plus-square
+    {
+        margin-left: 14px;
+        margin-top: 10px;
+    }
 
-        <!-- Styles -->
-        <style>
-        input
-        {
-            margin-top: 12px;
-        }
-                   .polaroid
-                   {
-                    text-align: center;
 
-               margin-top: 198px;
+       .newuser{
+            background: yellow;
+    height: 37px;
+    width: 157px;
+    margin-left:25%;
+    margin-top: -35px;
+    display: -webkit-box;
 
-               border: 1px solid black;
+    }
 
-                height: 197px;
+</style>
 
-                   width: 317px;
+<h1 style="margin-top:90px;">Persons</h1>
 
-                    margin-left: 39%; 
-                   }
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-            .regi
-            {
-                display: grid;
-
-                margin-left: 220px;
-
-                 margin-top: -20px;
-            }
-            .fpass
-            {
-                margin-top: 17px;
-                 display: grid;
-                 margin-left: 10px;
-            }
-            .polaroid
-            {
-                background:wheat;
-            }
-
-            h1
-            {
-                text-align:center;
-            }
-
-        </style>
-    </head>
-    <body>
-<<<<<<< HEAD
-        @extends('layout.app')
-
-        @section('content')
-=======
->>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
-    <h1>Login Page</h1>
-    
-        <div class="polaroid" style="text-align:center;margin-top:100px!important;">
-            <label for="username">Username:</label>
-            <input type="text"><br>
-            <label for="password">Password:</label>
-            <input type="password"><br><br>
-<<<<<<< HEAD
-            <button class="btn btn-primary" style="margin-top:1px;margin-left:35px;" type="submit">Submit</button>
-       <button class="fpass">Forgot Password?</button>
-       <button class="regi">Register</button>
-        </div>
-@endsection
       
-=======
-            <button class="btn btn-primary"  type="submit">Submit</button>
-       <button class="fpass">Forgot Password?</button>
-       <button class="regi">Register</button>
-        </div>
+       @if(count($users)>0)
 
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
->>>>>>> d92969bd9d6ba83102070b780ae2ed479a6e441e
-    </body>
-</html>
+        <table class="table table-dark">
+            
+            <tr>
+                <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+           
+            <th>Actions</th>
+             <th></th>
+            </tr>
+        
+     
+                @foreach($users as $user)
+            <tr>
+                
+                <td>{{$user->id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+           
+            <td><a href="home/{{$user->id}}/edit"><button class="btn btn-primary">Edit</button></a>
+    </td>
+<td>
+    {!!Form::open(['action' => ['HomeController@destroy', $user->id], 'method' => 'POST', 'class' => ''])!!}
+    {{Form::hidden('_method', 'DELETE')}}
+      {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+    {!! Form::close() !!}
+
+          </td>
+            
+            
+                          
+              </tr>
+
+      @endforeach
+        
+        </table>
+        @else
+        <p>No person found!!!</p>
+        @endif
+
+      
+     
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
