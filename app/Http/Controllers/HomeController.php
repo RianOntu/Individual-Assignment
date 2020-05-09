@@ -11,16 +11,33 @@ use Session;
 class HomeController extends Controller
 {
 
+public function search()
+{
 
+    $name = $_GET['name'];
+ 
+
+    $users = \App\User::where([ 
+        ['name', 'LIKE', '%' . $name . '%'],
+        ['email', 'LIKE', '%' . $name . '%'],
+    ])->get();
+
+    return view('pages.search', compact('users'));
+}
 
       public function index(Request $req)
     {
   
-               
-        $users= User::All();
-        return view('home')->with('users',$users);
-    
+              
+                   
+
  
+           $users= User::All();
+        return view('home')->with('users',$users);
+ 
+
+ 
+
 
    }
     

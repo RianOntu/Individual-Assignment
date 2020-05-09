@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Dashboard</div><a href="/search"class="btn btn-primary srch">Search User Here</a>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,6 +18,9 @@
                     <a class="newuser" href="/admin/create" style="color:black"><div ><i class="fas fa-plus"></i></div><p style="margin-top:7px;margin-left:10px;">Add New User</p></a>
                           
 <style>
+
+
+  
     .far.fa-plus-square
     {
         margin-left: 14px;
@@ -37,7 +40,9 @@
 
 </style>
 
-<h1 style="margin-top:90px;">Persons</h1>
+
+
+<h1 style="margin-top:14px;">Persons</h1>
 
       
        @if(count($users)>0)

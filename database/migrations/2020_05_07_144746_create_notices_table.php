@@ -20,7 +20,9 @@ class CreateNoticesTable extends Migration
             $table->string('From');
             $table->string('Subject');
             $table->string('Notice');
-               $table->string('Date');
+            $table->string('Date');
+
+
         });
     }
 

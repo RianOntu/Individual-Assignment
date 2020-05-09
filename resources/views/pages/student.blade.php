@@ -32,14 +32,14 @@
  
 
 
-                                    <a class="dropdown-item" href="{{route('logout')}}"
+                                    <a class="dropdown-item student" href="/logout"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form1').submit();">
                                         {{ __('Logout') }}<i class="fas fa-sign-out-alt"></i>
                                     </a>
  
 
-                                    <form id="logout-form" action="{{route('logout')}}" method="POST" style="">
+                                    <form id="logout-form1" action="/logout" method="POST" style="">
                                         @csrf
 
                                        
@@ -47,7 +47,10 @@
                       
          </div>               
 	<style>
-
+.dropdown-item.student
+{
+  margin-left: 83%;
+}
 		.one
 		{
            background: white;

@@ -44,7 +44,8 @@ class CreateNoticeController extends Controller
             'From'=>'required',
             'Subject'=>'required',
             'Notice'=>'required',
-              'Date'=>'required',
+            'Date'=>'required',
+              
            
             
         ]);
@@ -54,7 +55,7 @@ class CreateNoticeController extends Controller
       
         $notice->Subject=$request->input('Subject');
          $notice->Notice=$request->input('Notice');
-         $notice->Date=$request->input('Date');
+            $notice->Date=$request->input('Date');
         $notice->save();
           return redirect('/notices')->with('success','Posted!!!');
     }

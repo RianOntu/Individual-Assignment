@@ -15,6 +15,10 @@ class LoginController extends Controller
     	
     	return view('auth.login');
     }
+    public function search()
+    {
+    	return view('pages.search');
+    }
 
     public function verify(Request $req){
     		

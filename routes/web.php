@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
+
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +51,7 @@ Route::resource('teacher','TeacherController') ;
 //Route::resource('register','RegisterController@create') ;
 
 //Route::resource('posts','PostsController');
-
+Route::get('/search', 'LoginController@search');
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@verify');
 //Route::get('/logout', 'LogoutController@index');
@@ -63,5 +66,6 @@ Route::get('/student', 'StudentController@index');
 Route::get('/teacher', 'TeacherController@index');
 
 //});
+Route::any('/search1','HomeController@search');
 
 

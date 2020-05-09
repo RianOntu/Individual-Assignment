@@ -39,14 +39,14 @@
 
  <!--Logout-->
  
-                                    <a class="dropdown" href="{{route('logout')}}"
+                                    <a class="dropdown" href="/logout"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout').submit();">
                                         {{ __('Logout') }}<i class="fas fa-sign-out-alt"></i>
                                     </a>
  
 
-                                    <form id="logout" action="{{route('logout')}}" method="POST" style="">
+                                    <form id="logout" action="/logout" method="POST" style="">
                                         @csrf
 
                                        
