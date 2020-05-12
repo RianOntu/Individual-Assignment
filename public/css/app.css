@@ -96,6 +96,22 @@ a.newuser
          width: 93%;
          margin-top: 14px;
   }
+  .note
+      {
+        padding:10px;
+       border:1px solid gainsboro;
+      }
+      .table.tnote
+      {
+        border:1px solid black;
+      }
+    .container.df
+  {
+    margin-left: 41%;
+margin-top: 2%;
+border: 1px solid thistle;
+width: 43%;
+  }
   .fas.fa-envelope-open-text
   {
     margin-left: 14px;
@@ -428,6 +444,10 @@ button,
 [type=submit] {
   -webkit-appearance: button;
 }
+.btn.btn-danger.sr
+  {
+    margin-left:-67%;
+  }
 
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -5142,7 +5162,7 @@ height: 41px;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  margin-top: -4px;
+  margin-top: 32px;
   background: wheat;
 }
 
@@ -5742,7 +5762,7 @@ a.badge-dark.focus {
   color: #1d643b;
   background-color: #d7f3e3;
   border-color: #c7eed8;
-  margin-top:-46%;
+  margin-top:-48%;
 }
 
 .alert-success hr {

@@ -24,6 +24,8 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Actions</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +33,16 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
+                   <td><a href="home/{{$user->id}}/edit"><button class="btn btn-primary">Edit</button></a>
+    </td>
+    <td>
+    {!!Form::open(['action' => ['HomeController@destroy', $user->id], 'method' => 'POST', 'class' => ''])!!}
+    {{Form::hidden('_method', 'DELETE')}}
+      {{Form::submit('Delete', ['class' => 'btn btn-danger sr'])}}
+    {!! Form::close() !!}
+
+          </td>
+            
             </tr>
             @endforeach
             @endif

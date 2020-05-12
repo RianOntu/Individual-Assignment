@@ -31,9 +31,7 @@ Route::get('/index', function () {
 
    
 
-/*Route::get('/users/{id}',function($id){
-    return 'this is'.$id; 
-});*/
+Route::get('/download/{id}','NotesController@show')->name('downloadfile');
 
 Route::get('/index','PagesController@index') ;
 Route::get('/services','PagesController@services') ;
@@ -44,6 +42,7 @@ Route::get('/createnotice','CreateNoticeController@create') ;
 Route::get('/notices','CreateNoticeController@index') ;
 //Route::get('/home','HomeController@index') ;
 Route::resource('notice','CreateNoticeController') ;
+Route::resource('notes','NotesController') ;
 Route::resource('home','HomeController') ;
 Route::resource('admin','AdminController') ;
 Route::resource('user','UserController') ;
@@ -64,7 +63,8 @@ Auth::routes();
 //	Route::get('/home', 'HomeController@index')->name('home.index');
 Route::get('/student', 'StudentController@index');
 Route::get('/teacher', 'TeacherController@index');
-
+Route::get('/notes', 'NotesController@index');
+Route::get('/createnotes', 'NotesController@create');
 //});
 Route::any('/search1','HomeController@search');
 

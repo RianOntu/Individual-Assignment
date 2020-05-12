@@ -26,7 +26,7 @@
 </div>
 <div class="upperbox">
 
- <a class="notes" style="color:black"href="#"><div ><i syle="color:blue;" class="far fa-newspaper"></i></div><p style="margin-top:7px;margin-left:10px;">Upload Notes</p></a>
+ <a class="notes" style="color:black"href="/createnotes"><div ><i syle="color:blue;" class="far fa-newspaper"></i></div><p style="margin-top:7px;margin-left:10px;">Upload Notes</p></a>
 <a class="notes2" style="color:black"href="/createnotice"><div ><i class="fas fa-envelope-open-text"></i></div><p style="margin-top:7px;margin-left:10px;">Upload Notice</p></a>
 <a class="notes3" style="color:black"href="#"><div ><i class="fas fa-money-check-alt"></i></div><p style="margin-top:7px;margin-left:10px;">Salary</p></a>
 
